@@ -6,9 +6,11 @@ export default function Navbar() {
   return (
     <header className="w-full bg-white px-6 py-10 md:px-[102px] flex items-center justify-between">
       {/* Logo Section */}
-      <div className="flex items-center space-x-2 cursor-pointer">
+      <Link to="/">
+        <div className="flex items-center space-x-2 cursor-pointer">
         <img src={logo} alt="Logo" className='w-30.6 h-12' />
       </div>
+      </Link>
 
       {/* Navigation Links & CTA */}
       <nav className="flex items-center space-x-[24px] font-aeonik font-medium text-[#222222]">

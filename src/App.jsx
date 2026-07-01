@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import LoginPage from './pages/LoginPage'
 import Register from './pages/Register'
+import Support from './pages/Support'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/support" element={<Support />} />
       </Routes>
     <Footer />
     </>
