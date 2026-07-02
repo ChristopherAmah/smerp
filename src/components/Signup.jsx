@@ -25,7 +25,72 @@ const Signup = () => {
     rememberMe: false,
   })
 
-  const categories = ['Retail', 'Wholesale', 'Food & Beverage', 'Services']
+  const categories = [
+    {
+      group: 'Automotive',
+      options: ['Auto Accessories', 'Auto Dealers – New', 'Auto Dealers – Used', 'Detail & Carwash', 'Gas Stations', 'Motorcycle Sales & Repair', 'Rental & Leasing', 'Service, Repair & Parts', 'Towing'],
+    },
+    {
+      group: 'Business Support & Supplies',
+      options: ['Consultants', 'Employment Agency', 'Marketing & Communications', 'Office Supplies', 'Printing & Publishing'],
+    },
+    {
+      group: 'Computers & Electronics',
+      options: ['Computer Programming & Support', 'Consumer Electronics & Accessories'],
+    },
+    {
+      group: 'Construction & Contractors',
+      options: ['Architects, Landscape Architects, Engineers & Surveyors', 'Blasting & Demolition', 'Building Materials & Supplies', 'Construction Companies', 'Electricians', 'Engineer, Survey', 'Environmental Assessments', 'Inspectors', 'Plaster & Concrete', 'Plumbers', 'Roofers'],
+    },
+    {
+      group: 'Education',
+      options: ['Adult & Continuing Education', 'Early Childhood Education', 'Educational Resources', 'Other Educational'],
+    },
+    {
+      group: 'Entertainment',
+      options: ['Artists, Writers', 'Event Planners & Supplies', 'Golf Courses', 'Movies', 'Productions'],
+    },
+    {
+      group: 'Food & Dining',
+      options: ['Desserts, Catering & Supplies', 'Fast Food & Carry Out', 'Grocery, Beverage & Tobacco', 'Restaurants'],
+    },
+    {
+      group: 'Health & Medicine',
+      options: ['Acupuncture', 'Assisted Living & Home Health Care', 'Audiologist', 'Chiropractic', 'Clinics & Medical Centers', 'Dental', 'Diet I& Nutrition', 'Laboratory, Imaging & Diagnostic', 'Massage Therapy', 'Mental Health', 'Nurse', 'Optical', 'Pharmacy, Drug & Vitamin Stores', 'Physical Therapy', 'Physicians & Assistants', 'Podiatry', 'Social Worker', 'Animal Hospital', 'Veterinary & Animal Surgeons'],
+    },
+    {
+      group: 'Home & Garden',
+      options: ['Antiques & Collectibles', 'Cleaning', 'Crafts, Hobbies & Sports', 'Flower Shops', 'Home Furnishings', 'Home Goods', 'Home Improvements & Repairs', 'Landscape & Lawn Service', 'Pest Control', 'Pool Supplies & Service', 'Security System & Services'],
+    },
+    {
+      group: 'Legal & Financial',
+      options: ['Accountants', 'Attorneys', 'Financial Institutions', 'Financial Services', 'Insurance', 'Other Legal'],
+    },
+    {
+      group: 'Manufacturing, Wholesale, Distribution',
+      options: ['Distribution, Import/Export', 'Manufacturing', 'Wholesale'],
+    },
+    {
+      group: 'Merchants (Retail)',
+      options: ['Cards & Gifts', 'Clothing & Accessories', 'Department Stores, Sporting Goods', 'General', 'Jewelry', 'Shoes'],
+    },
+    {
+      group: 'Miscellaneous',
+      options: ['Civic Groups', 'Funeral Service Providers & Cemeteries', 'Miscellaneous', 'Utility Companies'],
+    },
+    {
+      group: 'Personal Care & Services',
+      options: ['Animal Care & Supplies', 'Barber & Beauty Salons', 'Beauty Supplies', 'Dry Cleaners & Laundromats', 'Exercise & Fitness', 'Massage & Body Works', 'Nail Salons', 'Shoe Repairs', 'Tailors'],
+    },
+    {
+      group: 'Real Estate',
+      options: ['Agencies & Brokerage', 'Agents & Brokers', 'Apartment & Home Rental', 'Mortgage Broker & Lender', 'Property Management', 'Title Company'],
+    },
+    {
+      group: 'Travel & Transportation',
+      options: ['Hotel, Motel & Extended Stay', 'Moving & Storage', 'Packaging & Shipping', 'Transportation', 'Travel & Tourism'],
+    },
+  ]
   const plans = ['Starter', 'Growth', 'Enterprise']
 
   const handleChange = (field, value) => {
@@ -250,20 +315,23 @@ const Signup = () => {
             onChange={(e)=>handleChange('category',e.target.value)}
             className="mt-2 w-full rounded-[16px] border border-[#E6E1E9] bg-[#F8F6FA] py-[13px] px-4 text-[14px]"
           >
-
-            <option>
+            <option value="">
               Please choose a Category
             </option>
 
-
-            {
-              categories.map(item=>(
-                <option key={item}>
-                  {item}
-                </option>
-              ))
-            }
-
+            {categories.map((group) => (
+              <optgroup
+                key={group.group}
+                label={group.group}
+                style={{ fontWeight: '700', paddingTop: '6px', paddingBottom: '6px' }}
+              >
+                {group.options.map((item) => (
+                  <option key={item} value={item} style={{ paddingTop: '4px', paddingBottom: '4px' }}>
+                    {item}
+                  </option>
+                ))}
+              </optgroup>
+            ))}
           </select>
 
 
