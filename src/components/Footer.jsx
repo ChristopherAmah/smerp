@@ -57,12 +57,12 @@ export default function Footer() {
           <ul className="space-y-4 text-[16px] text-[#000000] font-aeonik">
             <li className="flex items-center space-x-2">
               <span className="text-[#2B0A3D] font-bold"><FaPhone /></span>
-              <span>+234-8141381197</span>
+              <span>+234 806 045 56937</span>
             </li>
-            <li className="flex items-center space-x-2">
+            {/* <li className="flex items-center space-x-2">
               <span className="text-[#2B0A3D] font-bold"><FaPhone /></span>
               <span>+234-8141381198</span>
-            </li>
+            </li> */}
             <li className="flex items-center space-x-2">
               <span className="text-[#2B0A3D]"><HiMail /></span>
               <a href="mailto:smerp.support@thefifthlab.com" className="hover:underline">
